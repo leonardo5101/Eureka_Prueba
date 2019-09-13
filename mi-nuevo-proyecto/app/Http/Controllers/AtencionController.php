@@ -81,10 +81,10 @@ class AtencionController extends Controller
     {
         $atencionActualizar = Atencion::findOrFail($id);
 
-        $especialidad = Especialidades::findOrFail($atencionActualizar->id_especialidad);
-        $doctor = Medicos::findOrFail($atencionActualizar->id_medico);
-        $paciente = Pacientes::findOrFail($atencionActualizar->id_paciente);
-        return view('atencion.veratencion' , compact('atencionActualizar','especialidd','doctor','paciente'));
+        $especialidades = Especialidades::all();
+        $doctor = Medicos::all();
+        $pacientes = Pacientes::all();
+        return view('atencion.veratencion' , compact('atencionActualizar','especialidades','doctor','pacientes'));
     }
 
     /**

@@ -74,3 +74,16 @@ Route::get('/atencion/ver/{id}' , 'AtencionController@edit')->name('veratencion'
 Route::put('/atencion/update/{id}' , 'AtencionController@update')->name('updateatencion');
 
 Route::delete('/atencion/eliminar/{id}' , 'AtencionController@destroy')->name('eliminaratencion');
+
+
+
+//Atencion
+
+Route::get('/masignados','MedicosAsignadosController@index')->name('masignados');
+
+Route::post('/masignado' , 'MedicosAsignadosController@store')->name('masignado');
+
+
+Route::delete('/masignado/eliminar/{id}' , 'AtencionController@destroy')->name('eliminaratencion');
+
+

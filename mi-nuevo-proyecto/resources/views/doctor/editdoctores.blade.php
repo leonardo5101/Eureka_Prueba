@@ -7,7 +7,7 @@
 
 <div class="panel-title">
 
-	<h1>Medico :{{ $medicoActualizar->nombre }}</h1>
+	<h1>Medico: {{ $medicoActualizar->nombre }}</h1>
 
 </div>
 <div class="container">
@@ -35,8 +35,9 @@
                 @foreach ($especialidades as $element)
                 	@if ($element->id==$medicoActualizar->area_principal)
                 		<option selected="" value="{{ $element->id }}">{{ $element->nombre }}</option>
-                	@endif
+                	@else
                     <option value="{{ $element->id }}">{{ $element->nombre }}</option>
+                    @endif
                 @endforeach
             </select>
 		</div>

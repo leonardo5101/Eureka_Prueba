@@ -12,7 +12,7 @@
 </div>
  <div class="row">
         <div class="col-md-8">
-          
+          <a href="{{route('masignados')}}" class="btn btn-default btn-sm">Doctores Asignados</a>
             <table class="table">
                 <tr>
                 	
@@ -27,7 +27,7 @@
                         <td>{{$item->id}}</td>
                         <td>{{$item->nombre}}</td>
                         <td>{{$item->consultorio}}</td>
-                        <td><a href="{{route('doctoresasignados' , $item->id)}}" class="btn btn-default btn-sm">Doctores Asignados</a></td>
+                        
                         	
                         <td>
                             <a href="{{route('editarespecialidad' , $item->id)}}" class="btn btn-warning btn-sm">Editar</a>
