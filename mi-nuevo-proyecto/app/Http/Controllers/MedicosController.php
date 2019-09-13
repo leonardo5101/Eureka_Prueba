@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Medicos;
+use App\Especialidades;
 use Illuminate\Http\Request;
 
 class MedicosController extends Controller
@@ -15,7 +16,8 @@ class MedicosController extends Controller
     public function index()
     {
         $doctor = Medicos::all();
-        return view('doctor.doctores', compact('doctor'));
+        $especialidades = Especialidades::all();
+        return view('doctor.doctores', compact('doctor','especialidades'));
     }
 
     /**
@@ -69,7 +71,8 @@ class MedicosController extends Controller
     public function edit($id)
     {
         $medicoActualizar = Medicos::findOrFail($id);
-        return view('doctor.editdoctores' , compact('medicoActualizar'));
+        $especialidades = Especialidades::all();
+        return view('doctor.editdoctores' , compact('medicoActualizar','especialidades'));
     }
 
     /**

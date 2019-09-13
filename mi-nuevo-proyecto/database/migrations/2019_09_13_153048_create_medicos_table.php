@@ -16,7 +16,7 @@ class CreateMedicosTable extends Migration
         Schema::create('medicos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->string('area_principal');
+            $table->integer('area_principal');
             $table->boolean('estado');
 
 

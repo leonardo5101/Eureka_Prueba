@@ -30,8 +30,15 @@
 	
 		<div class="form-group">
 			<label for="area_principal" class="control-label">Area Principal</label>
-			<input type="text" name="area_principal" class="form-control" value="{{ $medicoActualizar->area_principal }}">
-
+			<select class="form-control" name="area_principal">
+                
+                @foreach ($especialidades as $element)
+                	@if ($element->id==$medicoActualizar->area_principal)
+                		<option selected="" value="{{ $element->id }}">{{ $element->nombre }}</option>
+                	@endif
+                    <option value="{{ $element->id }}">{{ $element->nombre }}</option>
+                @endforeach
+            </select>
 		</div>
 		<div class="form-group">
 			<label for="consultorio" class="control-label">Estado</label>

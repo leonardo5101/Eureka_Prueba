@@ -49,6 +49,12 @@
               <i class="ni ni-tv-2 text-primary"></i> Home
             </a>
           </li>
+<li class="nav-item">
+            <a class="nav-link" href=" {{ route('atenciones') }}">
+              <i class="ni ni-tv-2 text-primary"></i> Atencion
+            </a>
+          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/medicos') }}">
               <i class="ni ni-planet text-blue"></i> Medicos

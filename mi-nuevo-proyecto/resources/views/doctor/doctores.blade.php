@@ -26,7 +26,12 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->nombre}}</td>
-                        <td>{{$item->area_principal}}</td>
+                        @foreach ($especialidades as $a)
+                            @if ($a->id == $item->area_principal)
+                                <td>{{$a->nombre}}</td>
+                                @break
+                            @endif
+                        @endforeach
                         <td>@if ($item->estado ==1)
                         	Activo
                         	@else
@@ -75,7 +80,12 @@
 		</div>
 		<div class="form-group">
 			<label for="area_principal" class="control-label">Area Principal</label>
-			<input type="text" name="area_principal" class="form-control">
+			<select class="form-control" name="area_principal">
+                <option selected="" disabled="">Selecciona un Area</option>
+                @foreach ($especialidades as $element)
+                    <option value="{{ $element->id }}">{{ $element->nombre }}</option>
+                @endforeach
+            </select>
 
 		</div>
 		<div class="form-group">
